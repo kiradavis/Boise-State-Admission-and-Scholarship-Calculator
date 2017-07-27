@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.clear {
+	clear: both;
+}
+.wrapper {
+    background: #fff;
+    padding: 40px;
+}
+.tab-pane {
+    padding-top: 10px;
+}
+.field-title {
+    width: 100px;
+}
+.vertical-sliders {
+    margin: 0;
+}
+.vertical-sliders > div {
+    height: 500px;
+}
+.field-title {
+	width: 200px;
+}
+.rzslider .rz-tick {
+	padding-left: 0 !important;
+}
+#slider-options select {
+  width: 100%;
+}
