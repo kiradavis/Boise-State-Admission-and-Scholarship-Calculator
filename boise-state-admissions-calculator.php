@@ -89,7 +89,10 @@ function calculator_html($atts = array(), $content = null, $tag) {
 						$str .= '</em>';
 					} else { 
 						$str .= '<br><input type="button" value="Calculate" ng-click="calculate()"><br>';
-						$str .= '<em>{{msg}}</em>';
+						//$str .= '<em>{{msg}}</em>';
+						$str .= '<span ng-show="low">' . get_option( 'low_score' ) . '</span>';
+						$str .= '<span ng-show="mid">' . get_option( 'mid_score' ) . '</span>';
+						$str .= '<span ng-show="high">' . get_option( 'high_score' ) . '</span>';
 					}
 				$str .= '</div>'; // end one half
 			$str .= '</div>'; // end options 
