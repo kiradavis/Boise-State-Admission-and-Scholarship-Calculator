@@ -14,23 +14,41 @@ $scope.checkValidation = function() {
 	else { $scope.validationmsg = false; }
 }
 
-// Calculate
-$scope.calculate = function() {
-	var rawScore = ((0.64091*($scope.sliderGPA.value))-0.28946+(0.036599*($scope.sliderScore.value))-1.6)/0.019636;
-	
-	if (rawScore >= 34.5) {
-		$scope.msg = get_option('high_score');
-	} else if (rawScore >= 29.5) {
-		$scope.msg = get_option('mid_score');
-	} else {
-		$scope.msg = get_option('low_score');
-	}
-}
+$scope.low = false;
+$scope.mid = false;
+$scope.high = false;
 
 $scope.I = false;
 $scope.II = false;
 $scope.III = false;
 $scope.IV = false;
+
+// Calculate
+$scope.calculate = function() {
+	
+	$scope.low = false;
+	$scope.mid = false;
+	$scope.high = false;
+	
+	var rawScore = ((0.64091*($scope.sliderGPA.value))-0.28946+(0.036599*($scope.sliderScore.value))-1.6)/0.019636;
+	
+	if (rawScore >= 34.5) {
+		//$scope.msg = get_option('high_score');
+		$scope.high = true;
+			$scope.mid = false;
+			$scope.low = false;
+	} else if (rawScore >= 29.5) {
+		//$scope.msg = get_option('mid_score');
+		$scope.mid = true;
+			$scope.high = false;
+			$scope.low = false;
+	} else {
+		//$scope.msg = get_option('low_score');
+		$scope.low = true;
+			$scope.high = false;
+			$scope.mid = false;
+	}
+}
 
 $scope.nonresidentCalculate = function() {
 	/*
