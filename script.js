@@ -1,4 +1,3 @@
-
 var app = angular.module('calculatorApp', ['rzModule', 'ui.bootstrap']);
 
 app.controller('calculatorCtrl', function ($scope, $rootScope, $timeout, $modal) {
