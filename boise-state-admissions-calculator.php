@@ -3,7 +3,7 @@
 *	Plugin Name: Boise State Admission & Scholarship Calculators
 *	Description: Plugin to handle the admission and scholarship calculators for admissions.boisestate.edu. [calc type=""] & [calc type="scholarship"]
 *	Version: 0.1
-*	Author: Kira Davis
+*	Author: Kira Davis & David Lentz
 *	Author URI: https://webguide.boisestate.edu/
 *	Based on the impressive work at https://jsfiddle.net/ValentinH/954eve2L/
 *	See https://github.com/angular-slider/angularjs-slider/blob/master/README.md for useful info on how to work with rz-slider 
