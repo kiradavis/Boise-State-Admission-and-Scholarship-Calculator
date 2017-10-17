@@ -2,7 +2,7 @@
 /*
 *	Plugin Name: Boise State Admission & Scholarship Calculators
 *	Description: Plugin to handle the admission and scholarship calculators for admissions.boisestate.edu. [calc type=""] & [calc type="scholarship"]
-*	Version: 0.2
+*	Version: 0.1
 *	Author: Kira Davis & David Lentz
 *	Author URI: https://webguide.boisestate.edu/
 *	Based on the impressive work at https://jsfiddle.net/ValentinH/954eve2L/
@@ -49,12 +49,12 @@ function calculator_html($atts = array(), $content = null, $tag) {
 					$str .= '<small>SAT - ACT</small><br>';
 					$str .= '<rzslider rz-slider-model="sliderScore.value" rz-slider-options="sliderScore.options"></rzslider><br>';
 				$str .= '</div>';
-				$str .= '<div class="one_half" id="slider-options">';
+				$str .= '<fieldset legend="Admissions Calculator" class="one_half_last" id="slider-options">';
 					$str .= 'Please use the scales on the left to select your GPA and the highest of either your SAT or ACT score.<br><br>';
-					$str .= '<label class="field-title">GPA:</label><br>';
-					$str .= '<input type="number" ng-model="sliderGPA.value" max="4" min="2" step="0.01"/><br>';
-  					$str .= '<label class="field-title">SAT or ACT equivalent Score:</label><br>';
-					$str .= '<input type="number" ng-model="sliderScore.value" max="36" min="11" /><br>';
+					$str .= '<label class="field-title" id="gpa">GPA:</label><br>';
+					$str .= '<input type="number" aria-labelledby="gpa" ng-model="sliderGPA.value" max="4" min="2" step="0.01"/><br>';
+  					$str .= '<label class="field-title" id="sat-or-act">SAT or ACT equivalent Score:</label><br>';
+					$str .= '<input type="number" aria-labelledby="sat-or-act" ng-model="sliderScore.value" max="36" min="11" /><br>';
 					if ($atts['type'] == 'scholarship') {
 						$str .= '<label class="field-title">Participating States:';
 						$str .= '<select name="state" ng-model="state" >';
@@ -94,7 +94,7 @@ function calculator_html($atts = array(), $content = null, $tag) {
 						$str .= '<span ng-show="mid">' . get_option( 'mid_score' ) . '</span>';
 						$str .= '<span ng-show="high">' . get_option( 'high_score' ) . '</span>';
 					}
-				$str .= '</div>'; // end one half
+				$str .= '</fieldset>'; // end one half
 			$str .= '</div>'; // end options 
 		$str .= '</div>'; // end controller
 	$str .= '</div>'; // end app
