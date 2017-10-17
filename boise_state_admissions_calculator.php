@@ -88,7 +88,7 @@ function calculator_html($atts = array(), $content = null, $tag) {
                           		. '<span ng-show="IV">' . get_option( 'message_IV' ) . '</span>';
 						$str .= '</em>';
 					} else { 
-						$str .= '<br><input type="button" value="Calculate" ng-click="calculate()"><br>';
+						$str .= '<br><input type="submit" value="Calculate" ng-click="calculate()"><br>';
 						//$str .= '<em>{{msg}}</em>';
 						$str .= '<span ng-show="low">' . get_option( 'low_score' ) . '</span>';
 						$str .= '<span ng-show="mid">' . get_option( 'mid_score' ) . '</span>';
