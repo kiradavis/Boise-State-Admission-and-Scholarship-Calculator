@@ -13,21 +13,17 @@ $scope.checkValidation = function() {
 	else { $scope.validationmsg = false; }
 }
 
-$scope.low = false;
-$scope.mid = false;
-$scope.high = false;
-
-$scope.I = false;
-$scope.II = false;
-$scope.III = false;
-$scope.IV = false;
-
 // Calculate
 $scope.calculate = function() {
 	
 	$scope.low = false;
 	$scope.mid = false;
 	$scope.high = false;
+  
+  	$scope.I = false;
+	$scope.II = false;
+	$scope.III = false;
+	$scope.IV = false;
 	
 	var rawScore = ((0.64091*($scope.sliderGPA.value))-0.28946+(0.036599*($scope.sliderScore.value))-1.6)/0.019636;
 	
