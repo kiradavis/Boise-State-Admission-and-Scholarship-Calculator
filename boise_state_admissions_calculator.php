@@ -2,7 +2,7 @@
 /*
 *	Plugin Name: Boise State Admission & Scholarship Calculators
 *	Description: Plugin to handle the admission and scholarship calculators for admissions.boisestate.edu. [calc type=""] & [calc type="scholarship"]
-*	Version: 0.2
+*	Version: 0.3
 *	Author: Kira Davis & David Lentz
 *	Author URI: https://webguide.boisestate.edu/
 *	Based on the impressive work at https://jsfiddle.net/ValentinH/954eve2L/
