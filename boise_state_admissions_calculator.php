@@ -52,7 +52,7 @@ function calculator_html($atts = array(), $content = null, $tag) {
 				$str .= '<form legend="Admissions Calculator" class="one_half_last" id="slider-options">';
 					$str .= 'Please use the scales on the left to select your GPA and the highest of either your SAT or ACT score.<br><br>';
 					$str .= '<label class="field-title" id="gpa">GPA:</label><br>';
-					$str .= '<input type="number" aria-labelledby="gpa" ng-model="sliderGPA.value" max="4" min="2" step="0.01"/><br>';
+					$str .= '<input aria-labelledby="gpa" ng-model="sliderGPA.value" step="0.01"/><br>';
   					$str .= '<label class="field-title" id="sat-or-act">SAT or ACT equivalent Score:</label><br>';
 					$str .= '<input type="number" aria-labelledby="sat-or-act" ng-model="sliderScore.value" max="36" min="11" /><br>';
 					if ($atts['type'] == 'scholarship') {
