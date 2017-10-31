@@ -30,3 +30,6 @@
 #slider-options select {
   width: 100%;
 }
+#slider-body {
+	color: #000 !important;
+}
