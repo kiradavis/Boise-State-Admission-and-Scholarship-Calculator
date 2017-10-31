@@ -2,7 +2,7 @@
 /*
 *	Plugin Name: Boise State Admission & Scholarship Calculators
 *	Description: Plugin to handle the admission and scholarship calculators for admissions.boisestate.edu. [calc type=""] & [calc type="scholarship"]
-*	Version: 0.3
+*	Version: 0.3.1
 *	Author: Kira Davis & David Lentz
 *	Author URI: https://webguide.boisestate.edu/
 *	Based on the impressive work at https://jsfiddle.net/ValentinH/954eve2L/
@@ -163,7 +163,7 @@ add_action('admin_menu', 'boise_state_ac_admin_settings');
 add_action('admin_menu', 'boise_state_sc_admin_settings');
 
 function boise_state_ac_admin_settings() {
-	$parent_slug = 'options-general.php';
+    $parent_slug = 'options-general.php';
     $page_title = 'Boise State Admission Calculator Settings';
     $menu_title = 'Admission Calculator';
     $capability = 'edit_posts';
@@ -173,11 +173,11 @@ function boise_state_ac_admin_settings() {
     // $position = 80;
 
     //add_submenu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-	add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
+    add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
 }
 
 function boise_state_sc_admin_settings() {
-	$parent_slug = 'options-general.php';
+    $parent_slug = 'options-general.php';
     $page_title = 'Boise State Scholarship Calculator Settings';
     $menu_title = 'Scholarship Calculator';
     $capability = 'edit_posts';
@@ -185,7 +185,7 @@ function boise_state_sc_admin_settings() {
     $function = 'boise_state_sc_admin_settings_page_display';
 
     //add_submenu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-	add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
+    add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
 }
 
 //-----------------------------------------------------
