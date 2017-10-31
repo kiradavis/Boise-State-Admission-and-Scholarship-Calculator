@@ -38,6 +38,57 @@ function calculator_html($atts = array(), $content = null, $tag) {
         'type' => 'scholarship'
     ), $atts);
 	
+	$lowDefault = "The GPA and test score combination you've provided is below the minimum requirement
+	for admission to Boise State. There are, however, other avenues for attending Boise State in the future.
+	You may choose to attend Boise State as a non-degree seeking student until you have satisfactorily completed
+	at least 14 college-level credits, or you may attend another institution and re-apply to Boise State once
+	you have completed 14 college-level transferable semester credits with a 2.25 GPA or better. If you would
+	like to further discuss your options for attending Boise State, please contact the Admissions Office.";
+	
+	$midDefault = "Based on the information you provided, you are a potential candidate for admission. You 
+	are encouraged to submit recommendations from faculty at your school or other adults who have worked
+	with you in a classroom setting, and provide a personal statement describing your ability to be successful
+	in a university setting. Your application will be reviewed by an Admissions Committee.";
+	
+	$highDefault = "Congratulations! Based on the information you provided, you will make an excellent addition
+	to the Bronco Family! We look forward to seeing you on campus soon!";
+	
+	$oneDefault = "The GPA or ACT/SAT score you’ve provided is below the minimum requirement for the 
+	<a href='http://financialaid.boisestate.edu/scholarships/non-resident-tuition-assistance-programs/' 
+	target='_blank' title='Western Exchange Scholarship Program'>Western Exchange Scholarship Program</a>
+	and/or <a href='http://financialaid.boisestate.edu/scholarships/non-resident-tuition-assistance-programs/' 
+	target='_blank' title='GEM nonresident tuition scholarship'>GEM nonresident tuition scholarship</a>.
+	Scholarship recipients must have a minimum 3.20 cumulative unweighted high school GPA and ACT composite
+	21 or SAT critical reading and math combined 980 to qualify for consideration. If your GPA and/or test
+	scores improve, you may resubmit them before the December 15th Non-Resident Priority Date.&nbsp;Be sure
+	to review Boise State’s <a href='http://financialaid.boisestate.edu/scholarships/how-to-apply/' target='_blank'
+	title='scholarship checklist'>scholarship checklist</a> to view all <strong>scholarship options</strong>.";
+	
+	$twoDefault = "Congratulations! Based on the information you provided, you will be awarded a&nbsp;
+	<a href='http://financialaid.boisestate.edu/scholarships/non-resident-tuition-assistance-programs/' 
+	target='_blank' title='Western Exchange Scholarship Program'>Western Undergraduate Exchange (WUE)
+	Scholarship</a>! All admission materials must be received in Boise State Admissions by the December
+	15th&nbsp;Non-Resident Priority Date to qualify for consideration.&nbsp;<strong>Be sure to review Boise
+	State’s&nbsp;<a href='http://financialaid.boisestate.edu/scholarships/how-to-apply/' target='_blank' 
+	title='scholarship checklist'>scholarship checklist</a>&nbsp;to view all scholarship options.</strong>";
+	
+	$threeDefault = "Congratulations! Based on the information you provided, you will
+	be awarded a <a href='http://financialaid.boisestate.edu/scholarships/non-resident-tuition-assistance-programs/'
+	target='_blank' title='GEM nonresident scholarship'>GEM nonresident scholarship</a>! All admission materials
+	must be received in Boise State Admissions by the December 15th&nbsp; Non-Resident Priority Date to qualify
+	for the award.&nbsp;<strong>Be sure to review Boise State’s&nbsp;
+	<a href='http://financialaid.boisestate.edu/scholarships/how-to-apply/' target='_blank' 
+	title='scholarship checklist'>scholarship checklist</a> to view all scholarship options.</strong>";
+	
+	$fourDefault = "The GPA or ACT/SAT score you’ve provided is below the minimum requirement for the&nbsp;
+	<a href='http://financialaid.boisestate.edu/scholarships/non-resident-tuition-assistance-programs/' 
+	target='_blank' title='GEM nonresident tuition scholarship'>GEM Scholarship</a> for residents. Scholarship
+	recipients must have a minimum 3.60 cumulative, unweighted high school GPA and ACT composite 26 or SAT
+	critical reading and math combined 1170 to qualify for consideration. If your GPA and/or test scores improve,
+	you may resubmit them before the December 15th Non-Resident Priority Date.&nbsp;<strong>Be sure to review Boise
+	State’s&nbsp;<a href='http://financialaid.boisestate.edu/scholarships/how-to-apply/' target='_blank' 
+	title='scholarship checklist'>scholarship checklist</a>&nbsp;to view all scholarship options.</strong>";
+	
 	$str .= '<div ng-app="calculatorApp" id="slider-body">';
 		$str .= '<div ng-controller="calculatorCtrl" class="wrapper">';
 			$str .= '<div class="row all-options">';
@@ -82,17 +133,17 @@ function calculator_html($atts = array(), $content = null, $tag) {
 						$str .= 'Press calculate after setting sliders to check your eligibility<br><br>';
 						$str .= '<input type="submit" value="Calculate" ng-click="nonresidentCalculate()"><br>';
 						$str .= '<em>';
-						$str .= '<span ng-show="I">' . get_option( 'message_I' ) . '</span>' 
-                          		. '<span ng-show="II">' . get_option( 'message_II' ) . '</span>'
-                          		. '<span ng-show="III">' . get_option( 'message_III' ) . '</span>' 
-                          		. '<span ng-show="IV">' . get_option( 'message_IV' ) . '</span>';
+						$str .= '<span ng-show="I">' . get_option( 'message_I', $oneDefault ) . '</span>' 
+                          		. '<span ng-show="II">' . get_option( 'message_II', $twoDefault ) . '</span>'
+                          		. '<span ng-show="III">' . get_option( 'message_III', $threeDefault ) . '</span>' 
+                          		. '<span ng-show="IV">' . get_option( 'message_IV', $fourDefault ) . '</span>';
 						$str .= '</em>';
 					} else { 
 						$str .= '<br><input type="submit" value="Calculate" ng-click="calculate()"><br>';
 						//$str .= '<em>{{msg}}</em>';
-						$str .= '<span ng-show="low">' . get_option( 'low_score' ) . '</span>';
-						$str .= '<span ng-show="mid">' . get_option( 'mid_score' ) . '</span>';
-						$str .= '<span ng-show="high">' . get_option( 'high_score' ) . '</span>';
+						$str .= '<span ng-show="low">' . get_option( 'low_score', $lowDefault ) . '</span>';
+						$str .= '<span ng-show="mid">' . get_option( 'mid_score', $midDefault ) . '</span>';
+						$str .= '<span ng-show="high">' . get_option( 'high_score', $highDefault ) . '</span>';
 					}
 				$str .= '</form>'; // end one half
 			$str .= '</div>'; // end options 
